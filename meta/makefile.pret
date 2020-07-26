@@ -3,6 +3,13 @@
 @prefix : <http://ontologi.es/doap-deps#>.
 
 `Mom`
+	:runtime-requirement    [ :on "perl 5.008008"^^:CpanId ];
+	:runtime-requirement    [ :on "parent"^^:CpanId ];
+	:runtime-requirement    [ :on "Import::Into"^^:CpanId ];
+	:runtime-requirement    [ :on "MooX::Press"^^:CpanId ];
+	:runtime-requirement    [ :on "Regexp::Common"^^:CpanId ];
+	:runtime-recommendation [ :on "Types::Path::Tiny"^^:CpanId ];
+	:runtime-recommendation [ :on "Path::Tiny"^^:CpanId ];
 	:test-requirement       [ :on "Test::More 0.96"^^:CpanId ];
 	:develop-recommendation [ :on "Dist::Inkt 0.001"^^:CpanId ];
 	.
