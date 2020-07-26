@@ -15,7 +15,7 @@ use Regexp::Common;
 my $token_re = qr{(?:
 	(?: [^0-9\W]\w* )
 	| \: (?: isa|enum|does|type|handles|with|extends|default|requires|builder|trigger|clearer ) $RE{balanced}
-	| \: (?: rw|ro|rwp|bare|private|lazy|required|clearer|builder|trigger|role|std|common|path ) 
+	| \: (?: rw|ro|rwp|bare|private|lazy|required|clearer|builder|trigger|role|std|common|path )
 )}x;
 
 sub import {
