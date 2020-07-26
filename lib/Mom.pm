@@ -126,6 +126,7 @@ Is (roughly) a shortcut for:
   use Moo;
   use Scalar::Util qw( blessed );
   use Carp qw( carp croak confess );
+  use namespace::autoclean;
 
 But Mom takes care of a lot more. This:
 
@@ -141,6 +142,7 @@ Is (roughly) a shortcut for:
   use Scalar::Util qw( blessed );
   use Carp qw( carp croak confess );
   use Types::Standard qw();
+  use namespace::autoclean;
   
   has foo => ( is => "ro" );
   has bar => ( is => "rw", isa => Types::Standard::Int );
@@ -177,19 +179,19 @@ You can now write this:
 
 I thought I could go even shorter.
 
-  use Mom q(
+  use Mom q{
     hro   :required
     hlazy :lazy     :default(2)
     hrwp  :required :rwp
     hrw   :required :rw
-  );
+  };
 
 Is it a lot shorter? No, but that's mostly because MooX::ShortHas makes it
 very concise to write required attributes, and uses that in the demonstration
 but less concise for optional attributes. If we make the attributes optional,
 it becomes shorter.
 
-  use Mom q( hro hlazy :lazy :default(2) hrwp :rwp hrw :rw );
+  use Mom q{ hro hlazy :lazy :default(2) hrwp :rwp hrw :rw };
 
 =head1 IMPORT
 
