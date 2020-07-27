@@ -130,11 +130,11 @@ Is (roughly) a shortcut for:
 
 But Mom takes care of a lot more. This:
 
-  use Mom q(
+  use Mom q{
     foo
     bar   :rw :type(Int)
     baz   :required
-  );
+  };
 
 Is (roughly) a shortcut for:
 
@@ -291,9 +291,13 @@ Creates a Moo::Role instead of a Moo class.
 
 Like C<< extends "Class::Name" >> in Moo.
 
+=item C<< :with(Role::Name) >>
+
+Like C<< with "Role::Name" >> in Moo.
+
 =item C<< :requires(list,of,methods) >>
 
-Like C<< requires ("list", "of", "methods"); >> in Moo.
+Like C<< requires ("list", "of", "methods"); >> in Moo::Role.
 
 =item C<< :std >>
 
