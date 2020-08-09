@@ -6,6 +6,7 @@
 	:runtime-requirement    [ :on "perl 5.008008"^^:CpanId ];
 	:runtime-requirement    [ :on "parent"^^:CpanId ];
 	:runtime-requirement    [ :on "Import::Into"^^:CpanId ];
+	:runtime-requirement    [ :on "Moo 2.004"^^:CpanId ];
 	:runtime-requirement    [ :on "MooX::Press"^^:CpanId ];
 	:runtime-requirement    [ :on "Regexp::Common"^^:CpanId ];
 	:runtime-recommendation [ :on "Types::Path::Tiny"^^:CpanId ];
