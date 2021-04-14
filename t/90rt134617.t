@@ -38,6 +38,6 @@ my $e = exception {
 	$obj->foo(2);
 };
 
-like( $e, qr/^Usage/, 'attempt to set :rwp attribute' );
+like( $e, qr/(read-only|^Usage)/, 'attempt to set :rwp attribute' );
 
 done_testing;
