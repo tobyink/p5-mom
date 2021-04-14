@@ -71,12 +71,14 @@ sub import {
 		Carp::croak("Unrecognized syntax: $import");
 	}
 	
-	$me->SUPER::import(
+	my @super_args = (
 		factory_package => $me,
 		type_library    => "$me\::Types",
 		prefix          => undef,
 		$kind           => [ $caller => \%opts ],
 	);
+	$me->SUPER::import( @super_args );
+	
 	($kind eq 'role' ? 'Moo::Role' : 'Moo')->_install_subs($caller);
 	'Scalar::Util'->import::into($caller, qw(blessed));
 	'Carp'->import::into($caller, qw(croak confess carp));
