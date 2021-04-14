@@ -7,7 +7,7 @@
 	:shortdesc            "Moo objects minimally";
 	:homepage             <https://metacpan.org/release/Mom>;
 	:download-page        <https://metacpan.org/release/Mom>;
-	:bug-database         <http://rt.cpan.org/Dist/Display.html?Queue=Mom>;
+	:bug-database         <https://github.com/tobyink/p5-mom/issues>;
 	:repository           [ a :GitRepository; :browse <https://github.com/tobyink/p5-mom> ];
 	:created              2020-07-23;
 	:license              <http://dev.perl.org/licenses/>;
