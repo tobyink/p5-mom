@@ -39,6 +39,10 @@
 			label "Require Class::XSAccessor because of strange issues with Moo PP accessors.";
 		];
 		item [
+			a dcs:Packaging;
+			label "Switch to Github for issue tracker.";
+		];
+		item [
 			a dcs:Tests;
 			label "Include a few non-trivial tests.";
 		];
