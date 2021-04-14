@@ -23,19 +23,21 @@ the same terms as the Perl 5 programming language system itself.
 use strict;
 use warnings;
 use Test::More;
-use Test::Exception;
+use Test::Fatal;
 
 {
-    package Foo;
-    use Mom 'foo :rwp';
+	package Foo;
+	use Mom 'foo :rwp';
 }
 
 my $obj = Foo->new( foo => 1 );
 
 is $obj->foo, 1, "can get a :rwp attribute";
 
-throws_ok {
-    $obj->foo(2);
-} qr/^Usage/, 'attempt to set :rwp attribute';
+my $e = exception {
+	$obj->foo(2);
+};
+
+like( $e, qr/^Usage/, 'attempt to set :rwp attribute' );
 
 done_testing;
