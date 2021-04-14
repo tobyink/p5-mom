@@ -20,3 +20,26 @@
 			dcs:blame cpan:BRIANG;
 		];
 	].
+
+`Mom 0.005 cpan:TOBYINK`
+	issued  2021-04-14;
+	changeset [
+		item [
+			a dcs:Bugfix;
+			label "Fix regexp.";
+			dcs:fixes RT#134617;
+			dcs:blame cpan:BRIANG;
+		];
+		item [
+			a dcs:Bugfix;
+			label "Fix regexp even more.";
+		];
+		item [
+			a dcs:Packaging;
+			label "Require Class::XSAccessor because of strange issues with Moo PP accessors.";
+		];
+		item [
+			a dcs:Tests;
+			label "Include a few non-trivial tests.";
+		];
+	].
