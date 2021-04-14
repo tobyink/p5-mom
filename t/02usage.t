@@ -25,13 +25,13 @@ use Test::More;
 use Test::Fatal;
 
 {
-	package Local::MyRole;
+	package Local::Role;
 	use Mom q( :role foo :required );
 }
 
 {
-	package Local::MyClass;
-	use Mom q( :with(Local::MyRole) bar :required :type(Int) :std );
+	package Local::Class;
+	use Mom q( :with(Local::Role) bar :required :type(Int) :std );
 	
 	sub sum {
 		my $self = shift;
@@ -39,7 +39,7 @@ use Test::Fatal;
 	}
 }
 
-my $obj = 'Local::MyClass'->new( foo => 3, bar => 4 );
+my $obj = 'Local::Class'->new( foo => 3, bar => 4 );
 
 is(
 	$obj->sum,
@@ -48,19 +48,19 @@ is(
 );
 
 like(
-	exception { 'Local::MyClass'->new( foo => 3, bar => [] ) },
+	exception { 'Local::Class'->new( foo => 3, bar => [] ) },
 	qr/type constraint/,
 	':type(Int)',
 );
 
 like(
-	exception { 'Local::MyClass'->new( foo => 3 ) },
+	exception { 'Local::Class'->new( foo => 3 ) },
 	qr/re[q]uired/,
 	'foo :required',
 );
 
 like(
-	exception { 'Local::MyClass'->new( bar => 4 ) },
+	exception { 'Local::Class'->new( bar => 4 ) },
 	qr/re[q]uired/,
 	'bar :required',
 );
