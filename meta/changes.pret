@@ -47,3 +47,16 @@
 			label "Include a few non-trivial tests.";
 		];
 	].
+
+`Mom 0.006 cpan:TOBYINK`
+	issued  2022-06-11;
+	changeset [
+		item [
+			a dcs:Addition;
+			label "Support `!` and `:req` as aliases for `:required`.";
+		];
+		item [
+			a dcs:Addition;
+			label "Support `:handles(1)` and `:handles(2)` for enum attributes.";
+		];
+	].
